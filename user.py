@@ -10,7 +10,7 @@ class User :
     
         User.userlist.append(self)
    
-   def delete_user(self):# delete method deletes saved user from the userlist
+   def delete_user(self):
          
        User.userlist.remove(self)
 
@@ -20,17 +20,44 @@ class User :
 
 
    @classmethod
-   def find_by_number(cls,phonenumber):
+   def find_by_id_number(cls,id_number):
 
        for user in cls.userlist:
            if user.id_number== id:
                return True
 
-#    @classmethod
-#    def clear_all(cls):
-#        if(len(cls.userlist) == 0):
-#                 return "Empty"
        else:
             for user in cls.userlist:
                 cls.userlist.remove(user)
 
+
+class Management:
+   
+   managementlist = []
+   def __init__(self,management_name,password,id_number):
+       self.management_name = management_name
+       self.password = password
+       self.id_number = id_number
+
+   def  save_management(self):
+    
+        Management.managementlist.append(self)
+   
+   def delete_management(self):
+         
+       Management.managementlist.remove(self)
+
+   @classmethod
+   def display_management(cls):
+       return cls.managementlist
+
+
+   @classmethod
+   def find_by_id_number(cls,id_number):
+
+       for management in cls.managementlist:
+           if management.id_number== id:
+               return True
+       else:
+            for management in cls.managementlist:
+                cls.managementlist.remove(management)
