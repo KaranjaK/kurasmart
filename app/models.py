@@ -10,3 +10,13 @@ nm2_votes = 0
 voter_id = [1,2,3,4,5,6,7,8,9,10]
 
 no_of_voter = len(voter_id)
+
+while True:
+    voter = int(input("Enter your voter id : "))
+    if voter in voter_id:
+        print("you are a voter")
+        voter_id.remove(voter) #we will remove so that again voter can't vote
+        print("to give vote to ",nominee1,"press 1 ")
+        print("to give vote to ",nominee2,"press 2 ")
+
+
